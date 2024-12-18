@@ -24,10 +24,10 @@ const plugins = [
 module.exports = defineConfig({
   transpileDependencies: true,
   pages: {
-    popup: {
-      entry: `src/popup/popup.js`,
-      template: `src/popup/popup.html`,
-      filename: `popup.html`,
+    sidepanel: {
+      entry: `src/sidepanel/sidepanel.js`,
+      template: `src/sidepanel/sidepanel.html`,
+      filename: `sidepanel.html`,
     },
   },
   productionSourceMap: false,
@@ -36,8 +36,8 @@ module.exports = defineConfig({
     watch: true,
     entry: {
       // content: "./src/content-scripts/content-script.js",
-      background: "./src/background/background.js",
-      popup: "./src/popup/popup.js",
+      "service-worker": "./src/background/service-worker.js",
+      sidepanel: "./src/sidepanel/sidepanel.js",
     },
     output: {
       filename: "js/[name].js", //输出路径
