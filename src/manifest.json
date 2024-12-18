@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
   "name": "半托管报价计算器",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "半托管报价计算器",
-  "permissions":["sidePanel"],
+  "permissions":["sidePanel", "storage"],
   "action": {
     "default_title": "点击打开报价计算器"
   },

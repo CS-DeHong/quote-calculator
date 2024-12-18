@@ -190,12 +190,13 @@
               <div class="pricing-table-header">
                 <div class="pricing-table-header-top">
                   <div>{{ scope.$index }}PC核价</div>
-                  <el-input
-                    v-model="priceList[scope.$index - 1].pricing"
+                  <el-input-number
+                    v-model.number="priceList[scope.$index - 1].pricing"
                     size="mini"
+                    :controls="false"
                     :placeholder="`${scope.$index}PC核价`"
                     style="width: 50%; margin-right: 10px"
-                    @input="handleChangePriceInput(scope.$index - 1)"
+                    @change="handleChangePriceInput(scope.$index - 1)"
                   />
                 </div>
                 <div>用户购买价格: ${{ priceList[scope.$index - 1].purchasePrice }}</div>
@@ -352,6 +353,7 @@ export default {
           purchasePrice: 0,
         },
       ],
+      port: null,
     };
   },
   computed: {
@@ -425,8 +427,21 @@ export default {
       else if (row[column.property] < 0) return "background:	#F89898;";
     },
   },
-  mounted() {
-    this.priceList.forEach((_, index) => this.handleChangePriceInput(index));
+  beforeMount() {
+    // eslint-disable-next-line no-undef
+    this.port = chrome.runtime.connect({ name: "quote-calc" });
+    this.port.onMessage.addListener((value) => {
+      if (value) {
+        this.productInfo = value.productInfo;
+        this.baseInfo = value.baseInfo;
+        this.priceList = value.priceList;
+      }
+      this.priceList.forEach((_, index) => this.handleChangePriceInput(index));
+    });
+    this.port.postMessage({ type: "get" });
+  },
+  updated() {
+    this.port.postMessage({ type: "set", productInfo: this.productInfo, baseInfo: this.baseInfo, priceList: this.priceList });
   },
 };
 </script>
