@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "半托管报价计算器",
+  "version": "1.0",
+  "description": "半托管报价计算器",
+  "permissions":["sidePanel","contextMenus", "tabs"],
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "popup.html",
+    "openPanelOnActionClick": true
+  },
+  "icons": {
+    "16": "./icon.png",
+    "48": "./icon.png",
+    "128": "./icon.png"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/popup.js"],
+      "css": ["css/popup.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
