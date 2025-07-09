@@ -227,116 +227,36 @@ export default {
       },
       baseInfo: [
         {
-          startOperatingFee: 0.2,
-          endOperatingFee: 0.2,
+          startOperatingFee: 0.1,
+          endOperatingFee: 0.9,
           subsidy: 2.99,
           normalAirTransportFee: 50,
           specialAirTransportFee: 55,
-          normalSeaTransportFee: 11,
-          specialSeaTransportFee: 11,
+          normalSeaTransportFee: 15,
+          specialSeaTransportFee: 15,
           dollarCurrencyRate: 7.2,
         },
       ],
       tailQuoteList: [
         {
-          metricWeight: 28,
-          deliveryCharge: 3.73,
+          metricWeight: 300,
+          deliveryCharge: 3.2,
         },
         {
-          metricWeight: 56,
-          deliveryCharge: 3.764,
-        },
-        {
-          metricWeight: 85,
-          deliveryCharge: 3.786,
-        },
-        {
-          metricWeight: 113,
-          deliveryCharge: 3.804,
-        },
-        {
-          metricWeight: 141,
-          deliveryCharge: 4.202,
-        },
-        {
-          metricWeight: 170,
-          deliveryCharge: 4.276,
-        },
-        {
-          metricWeight: 198,
-          deliveryCharge: 4.354,
-        },
-        {
-          metricWeight: 226,
-          deliveryCharge: 4.432,
-        },
-        {
-          metricWeight: 255,
-          deliveryCharge: 4.978,
-        },
-        {
-          metricWeight: 283,
-          deliveryCharge: 5.074,
-        },
-        {
-          metricWeight: 311,
-          deliveryCharge: 5.17,
-        },
-        {
-          metricWeight: 340,
-          deliveryCharge: 5.244,
-        },
-        {
-          metricWeight: 368,
-          deliveryCharge: 5.596,
-        },
-        {
-          metricWeight: 396,
-          deliveryCharge: 5.596,
-        },
-        {
-          metricWeight: 425,
-          deliveryCharge: 5.596,
-        },
-        {
-          metricWeight: 453,
-          deliveryCharge: 5.596,
+          metricWeight: 450,
+          deliveryCharge: 4.7,
         },
         {
           metricWeight: 906,
-          deliveryCharge: 6.42,
+          deliveryCharge: 5.7,
         },
         {
           metricWeight: 1359,
-          deliveryCharge: 7.074,
+          deliveryCharge: 6.2,
         },
         {
-          metricWeight: 1812,
-          deliveryCharge: 7.73,
-        },
-        {
-          metricWeight: 2265,
-          deliveryCharge: 8.344,
-        },
-        {
-          metricWeight: 2718,
-          deliveryCharge: 9.52,
-        },
-        {
-          metricWeight: 3171,
-          deliveryCharge: 10.176,
-        },
-        {
-          metricWeight: 3624,
-          deliveryCharge: 10.844,
-        },
-        {
-          metricWeight: 4077,
-          deliveryCharge: 11.568,
-        },
-        {
-          metricWeight: 4530,
-          deliveryCharge: 12.382,
+          metricWeight: 999999,
+          deliveryCharge: 15,
         },
       ],
       priceList: [
